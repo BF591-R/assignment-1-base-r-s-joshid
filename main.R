@@ -109,7 +109,7 @@ row_medians <- function(x) {
 #' summarize_rows(m, mean)
 #' [1] 2 5 8
 summarize_rows <- function(x, fn, na.rm=FALSE) {
-    return(apply(x, 1, fn))
+    return(apply(x, 1, fn, na.rm=na.rm))
 }
 
 #' Summarize matrix rows into data frame
