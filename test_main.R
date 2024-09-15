@@ -121,83 +121,82 @@ describe("summarize_matrix()", {
 
 
 #  these tests are bonus - if you want to try the challenge, uncomment!
-# 
-# describe("Bonus tests! Make your code work when there are NAs!", {
-#   m <- matrix(1:9, nrow=3, byrow=T)
-#   m[2,1] <- NA
-#   
-#   it("returns correct mean values with na.rm=FALSE set", {
-#     expect_equal(summarize_rows(m, mean, na.rm=FALSE), 
-#                           c(2,NA,8))
-#   })
-#   it("returns correct mean values with na.rm=TRUE set", {
-#     expect_equal(summarize_rows(m, mean, na.rm=TRUE), 
-#                           c(2,5.5,8))
-#   })
-#   it("returns correct min values with na.rm=FALSE", {
-#     expect_equal(summarize_rows(m, min, na.rm=FALSE), 
-#                           c(1,NA,7))
-#   })
-#   it('returns correct min values with na.rm=TRUE', {
-#     expect_equal(summarize_rows(m, min, na.rm=TRUE),
-#                           c(1,5,7))
-#   })
-# })
-# 
-# describe("summarize_matrix() works with na.rm=FALSE", {
-#   m_summary <- summarize_matrix(m, na.rm=FALSE)
-#   
-#   it("returns mean correctly", {
-#     expect_equal(m_summary$mean, c(2, NA, 8))
-#   })
-#   it("returns stdev correctly", {
-#     expect_equal(m_summary$stdev, c(1, NA, 1))
-#   })
-#   it("returns median correctly", {
-#     expect_equal(m_summary$median, c(2, NA, 8))
-#   })
-#   it("returns min correctly", {
-#     expect_equal(m_summary$min, c(1, NA, 7))
-#   })
-#   it("returns max correctly", {
-#     expect_equal(m_summary$max, c(3, NA, 9))
-#   })
-#   it("returns numbers less than zero correctly", {
-#     expect_equal(m_summary$num_lt_0, c(0, NA, 0))
-#   })
-#   it("returns numbers netween 1 and 5 correctly", {
-#     expect_equal(m_summary$num_btw_1_and_5, c(2, NA, 0))
-#   })
-#   it("returns number of NAs correctly", {
-#     expect_equal(m_summary$num_na, c(0, 1, 0))
-#   })
-# })
-# 
-# describe("summarize_matrix() works with na.rm=TRUE", {
-#   m_summary <- summarize_matrix(m, na.rm=TRUE)
-#   
-#   it("returns mean correctly", {
-#     expect_equal(m_summary$mean, c(2, 5.5, 8))
-#   })
-#   it("returns stdev correctly", {
-#     expect_equal(m_summary$stdev, c(c(1, sd(c(5,6)), 1)))
-#   })
-#   it("returns median correctly", {
-#     expect_equal(m_summary$median, c(2, 5.5, 8))
-#   })
-#   it("returns min correctly", {
-#     expect_equal(m_summary$min, c(1, 5, 7))
-#   })
-#   it("returns max correctly", {
-#     expect_equal(m_summary$max, c(3, 6, 9))
-#   })
-#   it("returns numbers less than zero correctly", {
-#     expect_equal(m_summary$num_lt_0, c(0, 0, 0))
-#   })
-#   it("returns numbers netween 1 and 5 correctly", {
-#     expect_equal(m_summary$num_btw_1_and_5, c(2, 0, 0))
-#   })
-#   it("returns number of NAs correctly", {
-#     expect_equal(m_summary$num_na, c(0, 0, 0))
-#   })
-# })
+ 
+describe("Bonus tests! Make your code work when there are NAs!", {
+   m <- matrix(1:9, nrow=3, byrow=T)
+   m[2,1] <- NA
+   
+   it("returns correct mean values with na.rm=FALSE set", {
+     expect_equal(summarize_rows(m, mean, na.rm=FALSE), 
+                           c(2,NA,8))
+   })
+   it("returns correct mean values with na.rm=TRUE set", {
+     expect_equal(summarize_rows(m, mean, na.rm=TRUE), 
+                           c(2,5.5,8))
+   })
+   it("returns correct min values with na.rm=FALSE", {
+     expect_equal(summarize_rows(m, min, na.rm=FALSE), 
+                           c(1,NA,7))
+   })
+   it('returns correct min values with na.rm=TRUE', {
+     expect_equal(summarize_rows(m, min, na.rm=TRUE),
+                           c(1,5,7))
+   })
+ })
+ 
+ describe("summarize_matrix() works with na.rm=FALSE", {
+   m_summary <- summarize_matrix(m, na.rm=FALSE)
+   
+   it("returns mean correctly", {
+     expect_equal(m_summary$mean, c(2, NA, 8))
+   })
+   it("returns stdev correctly", {
+     expect_equal(m_summary$stdev, c(1, NA, 1))
+   })
+   it("returns median correctly", {
+     expect_equal(m_summary$median, c(2, NA, 8))
+   })
+   it("returns min correctly", {
+     expect_equal(m_summary$min, c(1, NA, 7))
+   })
+   it("returns max correctly", {
+     expect_equal(m_summary$max, c(3, NA, 9))
+   })
+   it("returns numbers less than zero correctly", {
+     expect_equal(m_summary$num_lt_0, c(0, NA, 0))
+   })
+   it("returns numbers netween 1 and 5 correctly", {
+     expect_equal(m_summary$num_btw_1_and_5, c(2, NA, 0))
+   })
+   it("returns number of NAs correctly", {
+     expect_equal(m_summary$num_na, c(0, 1, 0))
+   })
+ })
+describe("summarize_matrix() works with na.rm=TRUE", {
+   m_summary <- summarize_matrix(m, na.rm=TRUE)
+   
+   it("returns mean correctly", {
+     expect_equal(m_summary$mean, c(2, 5.5, 8))
+   })
+   it("returns stdev correctly", {
+     expect_equal(m_summary$stdev, c(c(1, sd(c(5,6)), 1)))
+   })
+   it("returns median correctly", {
+     expect_equal(m_summary$median, c(2, 5.5, 8))
+   })
+   it("returns min correctly", {
+     expect_equal(m_summary$min, c(1, 5, 7))
+   })
+   it("returns max correctly", {
+     expect_equal(m_summary$max, c(3, 6, 9))
+   })
+   it("returns numbers less than zero correctly", {
+     expect_equal(m_summary$num_lt_0, c(0, 0, 0))
+   })
+   it("returns numbers netween 1 and 5 correctly", {
+     expect_equal(m_summary$num_btw_1_and_5, c(2, 0, 0))
+   })
+   it("returns number of NAs correctly", {
+     expect_equal(m_summary$num_na, c(0, 0, 0))
+   })
+ })
