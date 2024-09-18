@@ -145,6 +145,7 @@ describe("Bonus tests! Make your code work when there are NAs!", {
  })
  
  describe("summarize_matrix() works with na.rm=FALSE", {
+   m <- matrix(1:9, nrow=3, byrow=T)
    m_summary <- summarize_matrix(m, na.rm=FALSE)
    
    it("returns mean correctly", {
@@ -173,6 +174,7 @@ describe("Bonus tests! Make your code work when there are NAs!", {
    })
  })
 describe("summarize_matrix() works with na.rm=TRUE", {
+   m <- matrix(1:9, nrow=3, byrow=T)
    m_summary <- summarize_matrix(m, na.rm=TRUE)
    
    it("returns mean correctly", {
@@ -200,3 +202,4 @@ describe("summarize_matrix() works with na.rm=TRUE", {
      expect_equal(m_summary$num_na, c(0, 0, 0))
    })
  })
+   

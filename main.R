@@ -158,7 +158,7 @@ summarize_matrix <- function(x, na.rm=FALSE){
       max = apply(x, 1, max, na.rm=na.rm),
       num_lt_0 = apply(x, 1, f1 <- function(x, na.rm=FALSE){
                                             if(na.rm==TRUE){
-                                              x<-rm_na(x)
+                                              x <- rm_na(x)
                                               } 
                                             return (length(x[x<0]))
                                             }, na.rm=na.rm),
@@ -211,3 +211,4 @@ simulate_gene_expression_w_missing <- function(num_samples, num_genes, missing_f
   gene_exp[missing] <- NA
   return(gene_exp)
 }
+
